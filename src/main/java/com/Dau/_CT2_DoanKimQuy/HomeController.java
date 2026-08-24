@@ -8,8 +8,6 @@ public class HomeController {
     @GetMapping("/")
     public String welcome() {
         return "<div style='text-align: center; margin-top: 50px; font-family: Arial, sans-serif;'>"
-             + "<h1 style='color: #004085;'>Chào bạn khóa 24CT2  Môn Học Công Nghệ Phần Mềm</h1>"
-                + "<p style='font-size: 18px; color: #383d41;'>Chào mừng bạn đến với học phần Công Nghệ Phần Mềm!</p   >    "
-             + "</div>";
+             + "<h1 style='color: #004085;'>Chào bạn khóa 24CT2  Môn Học Công Nghệ Phần Mềm</h1>";
     }
 }
