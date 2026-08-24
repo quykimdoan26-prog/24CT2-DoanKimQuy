@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="596.0" prefWidth="832.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ThuexeController">
+   <children>
+      <TableView fx:id="tblview" layoutX="112.0" layoutY="145.0" prefHeight="307.0" prefWidth="590.0">
+         <columns>
+            <TableColumn fx:id="cltenkh" prefWidth="130.4000244140625" text="Tên Khách Hàng" />
+            <TableColumn fx:id="cltenxe" prefWidth="70.39996337890625" text="Tên xe" />
+            <TableColumn fx:id="clngaynhan" prefWidth="98.4000244140625" text="Ngày nhận" />
+            <TableColumn fx:id="clngaytra" prefWidth="117.60003662109375" text="Ngày trả" />
+            <TableColumn fx:id="clgiathue" minWidth="5.5999755859375" prefWidth="89.5999755859375" text="Giá thuê" />
+            <TableColumn fx:id="cltrangthai" prefWidth="81.60003662109375" text="Trạng Thái" />
+         </columns>
+      </TableView>
+      <Label layoutX="121.0" layoutY="14.0" prefHeight="17.0" prefWidth="590.0" text="Lịch Sử Thuê Xe" textAlignment="CENTER" textFill="#1075b9">
+         <font>
+            <Font size="78.0" />
+         </font>
+      </Label>
+   </children>
+</Pane>

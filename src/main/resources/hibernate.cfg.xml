@@ -1,0 +1,21 @@
+<hibernate-configuration>
+    <session-factory>
+        <!-- Các cấu hình kết nối cũ giữ nguyên -->
+        <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="connection.url">jdbc:mysql://localhost:3306/qlddx?useSSL=false&amp;allowPublicKeyRetrieval=true&amp;serverTimezone=UTC</property>
+        <property name="connection.username">root</property>
+        <property name="connection.password">Kimquy@2006</property>
+        <property name="dialect">org.hibernate.dialect.MySQL8Dialect</property>
+        <property name="show_sql">true</property>
+        <property name="format_sql">true</property>
+        <property name="hbm2ddl.auto">update</property>
+
+        <!-- THÊM DÒNG NÀY ĐỂ HIBERNATE BIẾT ĐƯỜNG QUÉT CLASS ÁNH XẠ QUA CSDL -->
+        <mapping class="Entity.DanhGia"/>
+        <mapping class="Entity.TaiKhoan"/>
+        <mapping class="Entity.Xe"/>
+        <mapping class="Entity.ThueXe"/>
+        <mapping class="Entity.KhachHang"/>
+        <mapping class="Entity.HangXe"/>
+    </session-factory>
+</hibernate-configuration>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="571.0" prefWidth="942.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.QuanLyXeController">
+   <children>
+      <SplitPane dividerPositions="0.20388607931860522" prefHeight="571.0" prefWidth="962.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="595.0" prefWidth="237.0">
+               <children>
+                  <Button layoutY="14.0" mnemonicParsing="false" prefHeight="61.0" prefWidth="200.0" text="Button" />
+                  <Button layoutY="69.0" mnemonicParsing="false" prefHeight="61.0" prefWidth="200.0" text="Button" />
+                  <Button layoutX="-2.0" layoutY="128.0" mnemonicParsing="false" onAction="#chuyentrangthemxe" prefHeight="61.0" prefWidth="200.0" text="Thêm Xe" />
+                  <Button layoutX="-3.0" layoutY="14.0" mnemonicParsing="false" onAction="#chuyentrangthuexe" prefHeight="61.0" prefWidth="200.0" text="Danh sách Đơn Thuê" />
+                  <Button layoutX="-3.0" layoutY="190.0" mnemonicParsing="false" onAction="#taidulieuadmin" prefHeight="61.0" prefWidth="200.0" text="Tải Dữ Liệu Lên" />
+                  <Button layoutX="-3.0" layoutY="252.0" mnemonicParsing="false" prefHeight="61.0" prefWidth="200.0" text="Button" />
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="756.0" prefWidth="745.0">
+               <children>
+                  <TableView fx:id="tblview" layoutX="7.0" layoutY="148.0" prefHeight="394.0" prefWidth="762.0">
+                     <columns>
+                      	<TableColumn fx:id="clmaxe" prefWidth="95.20001220703125" text="Tên xe" />
+                        <TableColumn fx:id="cltenxe" prefWidth="95.20001220703125" text="Tên xe" />
+                        <TableColumn fx:id="clnsx" prefWidth="87.20002746582031" text="Năm Sản Xuất" />
+                        <TableColumn fx:id="clsochongoi" prefWidth="87.199951171875" text="Số Chỗ Ngồi" />
+                        <TableColumn fx:id="clmota" prefWidth="74.39996337890625" text="Mô Tả" />
+                        <TableColumn fx:id="clngaynhap" text="Ngày Nhâp" />
+                        <TableColumn fx:id="clgiathue" prefWidth="74.39996337890625" text="Giá Thuê" />
+                        <TableColumn fx:id="clmausac" minWidth="0.0" prefWidth="84.00006103515625" text="Màu Sắc" />
+                        <TableColumn fx:id="cltrangthai" minWidth="0.0" prefWidth="67.199951171875" text="Trạng Thái" />
+                        <TableColumn fx:id="clhangxe" prefWidth="108.60003662109375" text="Hãng xe" />
+                        <TableColumn fx:id="clthaotac" prefWidth="110.39999999999998" text="Thao Tác" />
+                     </columns>
+                  </TableView>
+                  <Label layoutX="270.0" layoutY="68.0" prefHeight="18.0" prefWidth="303.0" text="Trang Quản Lý Xe Cho Thuê">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</Pane>

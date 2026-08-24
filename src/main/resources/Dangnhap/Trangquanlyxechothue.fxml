@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane focusTraversable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="582.0" prefWidth="903.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.QuanLyXeController">
+   <children>
+      <TableView fx:id="tblview" layoutX="34.0" layoutY="165.0" prefHeight="307.0" prefWidth="835.0">
+        <columns>
+          	<TableColumn fx:id="clmaxe" prefWidth="75.0" text="Mã Xe" />
+          	<TableColumn fx:id="cltenxe" prefWidth="95.20001220703125" text="Tên xe" />
+            <TableColumn fx:id="clnsx" prefWidth="87.20002746582031" text="Năm Sản Xuất" />
+            <TableColumn fx:id="clsochongoi" prefWidth="87.199951171875" text="Số Chỗ Ngồi" />
+            <TableColumn fx:id="clmota" prefWidth="74.39996337890625" text="Mô Tả" />
+            <TableColumn fx:id="clngaynhap" text="Ngày Nhâp" />
+            <TableColumn fx:id="clgiathue" prefWidth="74.39996337890625" text="Giá Thuê" />
+            <TableColumn fx:id="clmausac" prefWidth="75.0" text="Màu Sắc" />
+            <TableColumn fx:id="cltrangthai" prefWidth="75.0" text="Trạng Thái" />
+            <TableColumn fx:id="clhangxe" prefWidth="108.60003662109375" text="Hãng xe" />
+     		<TableColumn fx:id="clthaotac" prefWidth="90.0" text="Thao Tác" />
+        </columns>
+      </TableView>
+      <Label layoutX="289.0" layoutY="43.0" prefHeight="53.0" prefWidth="307.0" text="Trang chủ thuê xe" textFill="#12dcb7">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+      <Button layoutX="717.0" layoutY="95.0" mnemonicParsing="false" onAction="#LichSuThuexeAction" prefHeight="37.0" prefWidth="142.0" text="Xem Lịch sử xe đã thuê" />
+      <TextField fx:id="idkh" layoutX="27.0" layoutY="512.0" opacity="1" prefHeight="25.0" prefWidth="85.0" promptText="id" visible="false" />
+      <Button fx:id="btndangnhap" layoutX="35.0" layoutY="30.0" mnemonicParsing="false" onAction="#openDangnhap" prefHeight="25.0" prefWidth="142.0" text="Đăng nhập/ Đăng ký" />
+   </children>
+</Pane>
