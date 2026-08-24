@@ -13,7 +13,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "CarRental")
-@IdClass(ThueXe.class)
+@IdClass(ThueXeId.class)
 public class ThueXe implements Serializable {
 
     @Id
