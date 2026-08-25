@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 import DAO.HangXeDAO;
+import DAO.KhachHangDAO;
 import DAO.XeDAO;
 import Entity.HangXe;
 import Entity.KhachHang;
@@ -59,7 +60,6 @@ public class QuanLyXeController {
 	private TableColumn<Xe, Void> clthaotac; // Khai báo cột thao tác
 	//
 	XeDAO tt = new XeDAO();
-
 	public void initialize(URL location, ResourceBundle resources) {
 	    // 1. Ánh xạ các cột thông thường
 	    clmaxe.setCellValueFactory(new PropertyValueFactory<>("maXe"));
@@ -274,11 +274,14 @@ public class QuanLyXeController {
 	}
 	
 	@FXML private Button btndangnhap;
+	@FXML private Button btnthaydoimk;
 	public void setkhachhang(KhachHang kh) {
 		btndangnhap.setText("Xin chào:"+kh.getTenKhachHang()); // Set chữ cho nút
 		btndangnhap.setDisable(true);
 		idkh.setText(String.valueOf(kh.getMaKhachHang()));
 		idkh.setEditable(false);
+		btnthaydoimk.setDisable(false);
+		btnthaydoimk.setOpacity(1);
 	}
 	public static void TrangchuAction(javafx.scene.Node node,KhachHang kh) {
 	    try {
@@ -512,4 +515,72 @@ public class QuanLyXeController {
 	        e.printStackTrace();
 	    }
 	}
+	
+	@FXML private TextField txtpw;
+	@FXML private TextField txtnewpw;
+	@FXML private TextField txtrpw;
+	KhachHangDAO ttkh=new KhachHangDAO();
+	
+		@FXML
+		public void Doimatkhau() {
+	    try {
+	        if (txtpw.getText().isEmpty()|| txtnewpw.getText().isEmpty()|| txtrpw.getText().isEmpty()) {
+	            showErrorAlert("Lỗi thiếu dữ liệu", "Không được để trống trường dữ liệu nào");
+	            return;
+	        }
+	
+	        int id = Integer.parseInt(idkh.getText());
+	        KhachHang kh = ttkh.findById(id);
+	
+	        if (kh == null) {
+	            showErrorAlert("Lỗi tài khoản", "Không tìm thấy thông tin khách hàng");
+	            return;
+	        }
+	
+	        if (!txtpw.getText().equals(kh.getMatKhau())) {
+	            showErrorAlert("Lỗi mật khẩu hiện tại", "Mật khẩu hiện tại không đúng");
+	            return;
+	        }
+	
+	        if (txtnewpw.getText().equals(kh.getMatKhau())) {
+	            showErrorAlert("Thông báo", "Mật khẩu mới phải khác mật khẩu cũ");
+	            return;
+	        }
+	
+	        if (!txtnewpw.getText().equals(txtrpw.getText())) {
+	            showErrorAlert("Lỗi xác nhận mật khẩu", "Mật khẩu xác nhận không khớp");
+	            return;
+	        }
+	
+	        kh.setMatKhau(txtnewpw.getText());
+	        ttkh.update(kh);
+	        showErrorAlert("Thành công", "Mật khẩu mới đã được cập nhật");
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	        showErrorAlert("Lỗi hệ thống", "Không thể cập nhật mật khẩu: " + e.getMessage());
+	    }
+	}
+	// set dữ liệu cho trang đổi mật khẩu
+	public void Setdoimatkhau(KhachHang kh){
+		idkh.setText(kh.getMaKhachHang()+"");
+		idkh.setEditable(false);
+	}
+	@FXML
+	public void DoimatkhauAction(){
+		ScreenCacheManager.ScreenUI ui=ScreenCacheManager.getScreen("/Dangnhap/Doimatkhau.fxml");
+		Parent root=ui.getRoot();
+		QuanLyXeController ctrl=(QuanLyXeController) ui.getController();
+		int id = Integer.parseInt(idkh.getText());
+	    KhachHang kh =ttkh.findById(id);
+		ctrl.Setdoimatkhau(kh);
+		Stage popupStage = new Stage();
+		popupStage.setTitle("Đổi mật khẩu");
+		popupStage.setScene(new Scene(root));
+		popupStage.initModality(Modality.APPLICATION_MODAL);
+		if (idkh.getScene() != null) {
+		    popupStage.initOwner(idkh.getScene().getWindow());
+		}
+		popupStage.showAndWait();
+	}
+	
 }

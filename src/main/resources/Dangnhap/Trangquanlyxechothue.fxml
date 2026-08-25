@@ -33,5 +33,6 @@
       <Button layoutX="717.0" layoutY="95.0" mnemonicParsing="false" onAction="#LichSuThuexeAction" prefHeight="37.0" prefWidth="142.0" text="Xem Lịch sử xe đã thuê" />
       <TextField fx:id="idkh" layoutX="27.0" layoutY="512.0" opacity="1" prefHeight="25.0" prefWidth="85.0" promptText="id" visible="false" />
       <Button fx:id="btndangnhap" layoutX="35.0" layoutY="30.0" mnemonicParsing="false" onAction="#openDangnhap" prefHeight="25.0" prefWidth="142.0" text="Đăng nhập/ Đăng ký" />
+      <Button fx:id="btnthaydoimk" disable="true" layoutX="742.0" layoutY="31.0" mnemonicParsing="false" opacity="0.0" prefHeight="25.0" prefWidth="124.0" text="Đổi Mật khẩu" onAction="#DoimatkhauAction"/>
    </children>
 </Pane>
