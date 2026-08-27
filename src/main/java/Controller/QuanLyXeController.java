@@ -251,6 +251,10 @@ public class QuanLyXeController {
 	}
 	@FXML
 	public void LichSuThuexeAction(ActionEvent event){
+		if(idkh.getText().isEmpty()) {
+			showErrorAlert("Lỗi chưa đăng nhập", "Bạn hãy đang nhập để xem lịch sử thuê xe");
+			return;
+	 	}
 	 	ScreenCacheManager.ScreenUI ui = ScreenCacheManager.getScreen("/Dangnhap/LichSuThueXeKH.fxml");
 	 	if(ui==null) {
 	 		System.out.println("không thể load file Lịch Sử Thuê Xe");
